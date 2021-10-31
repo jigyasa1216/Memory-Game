@@ -1,0 +1,299 @@
+// **************** COMPUTER MEMORY GAME ****************
+ #include<iostream.h>
+ #include<ctype.h>
+ #include<stdio.h>
+ #include<conio.h>
+ #include<string.h>
+ #include<dos.h>
+ #include<fstream.h>
+void score();
+int f=0;
+int s;
+class memory
+{
+	public :
+	void Q1();
+	void Q2();
+	void Q3();
+	void L1();
+	void L2();
+	void L3();
+}mm;
+
+void main()
+{
+	clrscr();
+	intch;
+	do
+	{
+		clrscr();
+	for(int y=0; y<=50; y++)
+		gotoxy(20,y);cout<<"\n";
+		cout<<"\n\t*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*";
+		cout<<"\a\n\t *.*.* WELCOME TO THE WORLD OF MEMORY GAME *.*.* ";
+		cout<<"\n\t*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*";
+		cout<<"\n ";delay(1500);
+		cout<<"\a\a\b\b\n \t*.*.*.*.*.*.*.*.*. M E N U *.*.*.*.*.*.*.*.*.*.*.";
+		cout<<endl<<endl;
+		delay(1000);cout<<"\n \t1. Game for name of Places ";
+		delay(1000);cout<<"\n \t2. Game for name of TV Series ";
+		delay(1000);cout<<"\n \t3. Help";
+		delay(1000);cout<<"\n \t4. Exit"<<endl<<endl;
+		delay(1000);cout<<"\n \t   Enter your choice :-";
+		cout<<endl<<endl<<endl<<endl;
+		cin>>ch;
+		if(ch==1)
+		{
+			clrscr();
+			mm.Q1();
+		}
+		if(ch==2)
+		{
+			clrscr();
+			mm.L1();
+		}
+		if(ch==3)
+		{
+			clrscr();
+			cout<<"\n\n*.*.*.*.*.*.*.*.*.*.* H E L P *.*.*.*.*.*.*.*.*.*.*";
+			cout<<"\n\n YOU WILL BE SEEING NAMES OF THINGS WHICH WILL DISAPPEAR ";
+			cout<<"\n\n AFTER A FEW SECONDS. YOU WILL THEN HAVE TO ENTER WHAT ";
+			cout<<"\n\n YOU HAVE SEEN. ANY WRONG ENTRY YOU LOSE THE GAME ";
+			cout<<"\n\n OTHERWISE YOU MOVE TO THE NEXT STEP. FOR EVERY CORRECT ";
+			cout<<"\n\n STEP YOU GET 100 POINTS. ENTER ANY KEY TO CONTINUE. ";
+			getch();
+		}
+		}while(ch!=4);
+
+gotoxy(40,12);
+cout<<"\n\t*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*";
+cout<<"\a\a\b\a\a\n \t*.*.* THANK YOU FOR PLAYING THIS GAME *.*.* ";
+cout<<"\n\t*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*";
+getch();
+ }
+void memory::Q1()
+ {
+	 f=0;
+	clrscr();
+	char a[]="VIDYAMANDIR CLASSES";
+	char b[]="PITAMPURA";
+	char c[30],d[30];
+	cout<<"\n"<<a<<"\n"<<b;
+	delay(3000);
+	clrscr(); cout<<"\n** ENTER WHAT YOU HAVE SEEN :- ";
+	cout<<"\n";
+	gets(c);
+	gets(d);
+	strupr(c);
+	strupr(d);
+	 if((strcmp(a,c)==0)&&(strcmp(b,d)==0))
+	 {
+		cout<<"\n*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*";
+		cout<<"\n *.*.* CONGRATULATIONS YOU HAVE GIVEN THE CORRECT ANSWER *.*.* ";
+		cout<<"\n*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*";
+		getch();
+		 f+=100;
+		cout<<"\n*..*..* PRESS ANY KEY TO CONTINUE *..*..* ";
+		getch();
+		clrscr();
+		mm.Q2();
+	 }
+	else
+	 {
+		clrscr();
+		cout<<"\n** SORRY YOU HAVE GIVEN THE WRONG ANSWER ** ";
+		cout<<"\n**. TRY AGAIN **. ";
+		getch();
+		score();
+	 }
+ }
+void memory::Q2()
+ {
+	clrscr();
+	char c[20],d[20];
+	char a[20]="INDIANAPOLIS";
+	char b[20]="WOLVERHAMPTON";
+	cout<<a<<"    "<<"\n"<<b;
+	delay(4000);
+	clrscr();
+	cout<<"**ENTER WHAT YOU HAVE SEEN";
+	cout<<"\n";
+	gets(c);
+	gets(d);
+	strupr(c);
+	strupr(d);
+	 if((strcmp(a,c)==0)&&(strcmp(b,d)==0))
+	 {
+		cout<<"\n*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*";
+		cout<<"\n *.*.*CONGRATULATIONS YOU HAVE GIVEN THE CORRECT ANSWER*.*.* ";
+		cout<<"\n*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*";
+		f+=100;
+		cout<<"\n"<<"*..*..* PRESS ANY KEY TO CONTINUE *..*..*";
+		getch();
+		clrscr();
+		mm.Q3();
+	 }
+	else
+	{
+		cout<<"\n** SORRY YOU HAVE GIVEN THE WRONG ANSWER **";
+		cout<<"\n** TRY AGAIN **";
+		getch();
+		score();
+	}
+ }
+void memory::Q3()
+ {
+	char c[30],d[30];
+	char a[]="THIRUVANANTHAMPURAM";
+	char b[]="VISAKHAPATNAM";
+	cin>>c>>d;
+	cout<<a<<"\n"<<b;
+	delay(5000);
+	clrscr();
+	cout<<"** ENTER WHAT YOU HAVE SEEN :-";
+	cout<<"\n";
+	gets(c);
+	gets(d);
+	strupr(c);
+	strupr(d);
+	 if((strcmp(a,c)==0)&&(strcmp(b,d)==0))
+	  {
+		cout<<"\n*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*";
+		cout<<"\n *.*.* CONGRATULATIONS YOU HAVE GIVEN THE CORRECT ANSWER:- *.*.* ";
+		cout<<"\n*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*";
+		getch();
+		f+=100;
+		cout<<"\n"<<"*..*..* PRESS ANY KEY TO CONTINUE *..*..*";
+		getch();
+		clrscr();
+		score();
+	  }
+	else
+	  {
+		cout<<"\n** SORRY YOU HAVE GIVEN THE WRONG ANSWER **";
+		cout<<"\n** TRY AGAIN **";
+		getch();
+		score();
+	  }
+ }
+void score()
+ {
+	fstream j;
+	j.open("score.txt",ios::in|ios::out);
+	j<<f;
+	j.close();
+	clrscr();
+	fstream j1;
+	j1.open("score.txt",ios::in|ios::out);
+		while(!j1.eof())
+		{
+			j1>>s;
+		}
+	cout<<"YOUR FINAL SCORE IS: "<<s;
+	getch();
+	j1.close();
+ }
+
+void memory::L1()
+{
+	f=0;
+	clrscr();
+	char a[40]="SUPERGIRL";
+	char b[40]="RIVERDALE";
+	char c[40],d[40];
+	cout<<"\n"<<a<<"\n"<<b;
+	delay(3000);
+	clrscr();
+	cout<<"\n** ENTER WHAT YOU HAVE SEEN :- ";
+	cout<<"\n";
+	gets(c);
+	gets(d);
+	strupr(c);
+	strupr(d);
+	if((strcmp(a,c)==0)&&(strcmp(b,d)==0))
+	{
+		cout<<"\n*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*";
+		cout<<"\n *.*.* CONGRATULATIONS YOU HAVE GIVEN THE CORRECT ANSWER *.*.* ";
+		cout<<"\n*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*";
+		f+=100;
+		cout<<"\n*..*..* PRESS ANY KEY TO CONTINUE *..*..* ";
+		getch();
+		clrscr();
+		mm.L2();
+	}
+	else
+	{
+		cout<<"\n** SORRY YOU HAVE GIVEN THE WRONG ANSWER ** ";
+		cout<<"\n**. TRY AGAIN **. ";
+		getch();
+		score();
+	}
+}
+
+void memory::L2()
+{
+	clrscr();
+	char c[40],d[40];
+	char a[40]="SCARE PEWDIEPIE";
+	char b[40]="STRANGER THINGS";
+	cout<<a<<"    "<<"\n"<<b;
+	delay(3000);
+	clrscr();
+	cout<<"\n** ENTER WHAT YOU HAVE SEEN :- ";
+	cout<<"\n";
+	gets(c);
+	gets(d);
+	strupr(c);
+	strupr(d);
+	if((strcmp(a,c)==0) &&(strcmp(b,d)==0))
+	{
+		cout<<"\n*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*";
+		cout<<"\n *.*.*CONGRATULATIONS YOU HAVE GIVEN THE CORRECT ANSWER*.*.* ";
+		cout<<"\n*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*";
+		f+=100;
+		cout<<"\n"<<"*..*..* PRESS ANY KEY TO CONTINUE *..*..*";
+		getch();
+		clrscr();
+		mm.L3();
+	}
+	else
+	{
+		cout<<"\n** SORRY YOU HAVE GIVEN THE WRONG ANSWER **";
+		cout<<"\n"<<"** TRY AGAIN **";
+		getch();
+		score();
+	}
+	}
+
+void memory::L3()
+{
+	char c[40],d[40];
+	char a[]="ORANGE IS THE NEW BLACK";
+	char b[]="SABRINA THE TEENAGE WITCH";
+	cout<<a<<"\n"<<b;
+	delay(4000);
+	clrscr();
+	cout<<"** ENTER WHAT YOU HAVE SEEN";
+	cout<<"\n";
+	gets(c);
+	gets(d);
+	strupr(c);
+	strupr(d);
+	if((strcmp(a,c)==0) &&(strcmp(b,d)==0))
+	{
+		cout<<"\n*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*";
+		cout<<"\n *.*.* CONGRATULATIONS YOU HAVE GIVEN THE CORRECT ANSWER:- *.*.* ";
+		cout<<"\n*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*";
+		getch();
+		f+=100;
+		score();
+		cout<<"\n"<<"*..*..* PRESS ANY KEY TO CONTINUE *..*..*";
+		getch();
+		clrscr();
+	}
+	else
+	{
+		cout<<"\n** SORRY YOU HAVE GIVEN THE WRONG ANSWER **";
+		cout<<'\n'<<"** TRY AGAIN **";
+		score();
+		getch();}}
